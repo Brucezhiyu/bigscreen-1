@@ -1,18 +1,18 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-const px = (n) => n / 32.68 * (window as any).pageWidth;
+import {px} from '../shared/px'
 export const Chart1 = () => {
     const divRef = useRef(null);
     useEffect(() => {
         console.log(divRef.current);
-        var itemStyle = {
+        const itemStyle = {
             opacity: 0.8,
             shadowBlur: 10,
             shadowOffsetX: 0,
             shadowOffsetY: 0,
             shadowColor: 'rgba(0, 0, 0, 0.5)'
         };
-        var dataJR = [
+        const dataJR = [
             [0, 4000],
             [1, 2000],
             [6.03, 5000],
@@ -45,7 +45,7 @@ export const Chart1 = () => {
                 color: 'gray'
             },
             legend: {
-                top: px(0.2),
+                top: px(0.25),
                 data: ['进入', '外出'],
                 itemWidth: px(0.15),
                 textStyle: {
@@ -55,7 +55,6 @@ export const Chart1 = () => {
             },
             xAxis: {
                 data: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00'],
-
                 splitLine:{show:false},
                 axisTick: {show: false},
                 axisLine: {show: false},
@@ -76,7 +75,7 @@ export const Chart1 = () => {
             },
             grid: {
                 x: px(1),
-                y: px(0.7),
+                y: px(1),
                 x2: px(0),
                 y2: px(0.6)
             },
