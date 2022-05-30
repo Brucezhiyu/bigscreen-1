@@ -1,39 +1,100 @@
 @import "../shared/helper";
 
-.home{
+.home {
   flex: 1;
   display: flex;
   flex-direction: column;
-  >header{
+  background: #13124C;
+  color: white;
+
+  > header {
     height: px(1.95);
-    background-size:cover ;
+    background-size: cover;
   }
+
   > main {
     flex: 1;
     display: grid;
     grid-template:
-      "box1 box1 box4 box5" 5.08fr
-      "box2 box2 box4 box5" 5.08fr
-      "box3 box3 box4 box5" 5.08fr / 4.17fr 4.17fr 13.12fr 8.34fr;
+      "box1 box1 box4 box5" 4.36fr
+      "box2 box2 box4 box5" 4.36fr
+      "box3 box3 box4 box5" 4.36fr / 4.17fr 4.17fr 13.12fr 8.34fr;
+    grid-column-gap: px(0.53);
+    grid-row-gap: px(0.74);
+
+    > section {
+      text-align: center;
+
+
+    }
+
+    .bordered {
+      border: 1px solid #453691;
+      border-radius: 1px;
+      position: relative;
+      background: rgb(19, 18, 76);
+      background: linear-gradient(180deg, rgba(19, 18, 76, 1) 59%, rgba(20, 20, 84, 1) 100%);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        box-shadow: 12px 0 0 -10px #231763,
+        -12px 0 0 -10px #231763,
+        0 12px 0 -10px #231763,
+        0 -12px 0 -10px #231763,;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        border-width: px(0.17);
+        width: px(3.96);
+        height: px(0.1);
+        background: #13124C;
+        z-index: 2;
+        left: px(2.6);
+        top: px(0);
+        border-style: solid;
+        border-color: #231763 transparent transparent transparent;
+      }
+
+    }
+
     > .section1 {
       grid-area: box1;
-      background: pink;
+      position: relative;
+
     }
+
     > .section2 {
       grid-area: box2;
-      background: lightgray;
     }
+
     > .section3 {
       grid-area: box3;
-      background: lightblue;
     }
+
     > .section4 {
       grid-area: box4;
-      background: lightcyan;
     }
+
     > .section5 {
       grid-area: box5;
-      background: lightyellow;
+    }
+
+    .人员进出分析 {
+      height: px(4.36);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart {
+      flex: 1;
+      width: 100%;
     }
   }
 }
