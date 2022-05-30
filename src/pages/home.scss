@@ -1,8 +1,39 @@
 @import "../shared/helper";
 
 .home{
-  header{
-    height: px(168);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  >header{
+    height: px(1.95);
     background-size:cover ;
+  }
+  > main {
+    flex: 1;
+    display: grid;
+    grid-template:
+      "box1 box1 box4 box5" 5.08fr
+      "box2 box2 box4 box5" 5.08fr
+      "box3 box3 box4 box5" 5.08fr / 4.17fr 4.17fr 13.12fr 8.34fr;
+    > .section1 {
+      grid-area: box1;
+      background: pink;
+    }
+    > .section2 {
+      grid-area: box2;
+      background: lightgray;
+    }
+    > .section3 {
+      grid-area: box3;
+      background: lightblue;
+    }
+    > .section4 {
+      grid-area: box4;
+      background: lightcyan;
+    }
+    > .section5 {
+      grid-area: box5;
+      background: lightyellow;
+    }
   }
 }
