@@ -7,6 +7,7 @@ import {Chart1} from '../components/chart-1';
 import {Chart2} from '../components/chart-2';
 import {Chart3} from '../components/chart-3';
 import {Chart5} from '../components/chart-5';
+import {Chart6} from '../components/chart-6';
 
 export const Home = () => {
 
@@ -33,11 +34,14 @@ export const Home = () => {
                     <h2>开门方式</h2>
                     <Chart5/>
                 </section>
-                <section className="bordered section6"></section>
+                <section className=" section6">
+                    <h2>小区车位使用率</h2>
+                    <Chart6/>
+                </section>
                 <section className="bordered section7"></section>
                 <section className="bordered section8"></section>
             </main>
-                <footer style={{backgroundImage: `url(${footerBg})`}}></footer>
+            <footer style={{backgroundImage: `url(${footerBg})`}}></footer>
         </div>
     );
 };

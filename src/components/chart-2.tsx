@@ -48,12 +48,12 @@ export const Chart2 = () => {
                         borderRadius: 3
                     },
                     data: [
-                        {value: 30, name: '小区租户'},
-                        {value: 25, name: '设施维修'},
-                        {value: 8, name: '外卖快递'},
-                        {value: 12, name: '小区住户'},
-                        {value: 10, name: '环卫人员'},
-                        {value: 15, name: '小区访客'},
+                        {value: 30, name: '小 区 租 户'},
+                        {value: 25, name: '设 施 维 修'},
+                        {value: 8, name: '外 卖 快 递'},
+                        {value: 12, name: '小 区 住 户'},
+                        {value: 10, name: '环 卫 人 员'},
+                        {value: 15, name: '小 区 访 客'},
                     ]
                 }
             ]

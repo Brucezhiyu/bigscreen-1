@@ -45,6 +45,7 @@ export const Chart1 = () => {
                 color: 'gray'
             },
             legend: {
+                right:'top',
                 top: px(0.25),
                 data: ['进入', '外出'],
                 itemWidth: px(0.15),
