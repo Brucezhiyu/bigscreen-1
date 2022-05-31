@@ -4,10 +4,34 @@ import {px} from '../shared/px';
 
 export const Chart7 = () => {
     const divRef = useRef(null);
-    useEffect(() => {
+    const myChart = useRef(null);
+    const data = [
+        {name: '1', 1: 9, 2: 3,3:10},
+        {name: '2', 1: 9, 2: 3,3:10},
+        {name: '3', 1: 9, 2: 3,3:10},
+        {name: '4', 1: 9, 2: 3,3:10},
+        {name: '5', 1: 9, 2: 3,3:10},
+        {name: '6', 1: 9, 2: 3,3:10},
+        {name: '7', 1: 9, 2: 3,3:10},
 
-        const myChart = echarts.init(divRef.current);
-        myChart.setOption({
+    ];
+    useEffect(() => {
+        setInterval(() => {
+            const newData = [
+                {name: '1', 1: Math.random() * 100, 2: Math.random() * 100,3:Math.random() * 100},
+                {name: '2', 1: Math.random() * 100, 2: Math.random() * 100,3:Math.random() * 100},
+                {name: '3', 1: Math.random() * 100, 2: Math.random() * 100,3:Math.random() * 100},
+                {name: '4', 1: Math.random() * 100, 2: Math.random() * 100,3:Math.random() * 100},
+                {name: '5', 1: Math.random() * 100, 2: Math.random() * 100,3:Math.random() * 100},
+                {name: '6', 1: Math.random() * 100, 2: Math.random() * 100,3:Math.random() * 100},
+                {name: '7', 1: Math.random() * 100, 2: Math.random() * 100,3:Math.random() * 100},
+
+            ];
+            x(newData);
+        }, 1000);
+    }, []);
+    const x = (data) => {
+        myChart.current.setOption({
             grid: {
                 x: px(0.9),
                 y: px(1),
@@ -44,6 +68,7 @@ export const Chart7 = () => {
             yAxis: [
                 {
                     type: 'value',
+                    data: data.map(i => i.name),
                     splitLine:{show:false},
                     axisTick: {show: false},
                     axisLine: {show: false},
@@ -57,9 +82,7 @@ export const Chart7 = () => {
                     name: '上午',
                     type: 'bar',
                     barWidth:px(0.1),
-                    data: [
-                        120, 149, 70, 132, 125, 76, 135.6
-                    ],
+                    data:data.map(i => i[1]),
                     itemStyle: {
                         normal: {
                             barBorderRadius: 20,
@@ -71,8 +94,7 @@ export const Chart7 = () => {
                 {
                     name: '中午',
                     type: 'bar',
-                    data: [
-                        126, 159, 90, 164, 187, 77, 175.6],
+                    data: data.map(i => i[2]),
                     barWidth:px(0.1),
                     itemStyle: {
                         normal: {
@@ -85,8 +107,7 @@ export const Chart7 = () => {
                 {
                     name: '晚上',
                     type: 'bar',
-                    data: [
-                        90, 59, 190, 264, 287, 140, 90],
+                    data:data.map(i => i[3]),
                     barWidth:px(0.1),
                     itemStyle: {
                         normal: {
@@ -99,6 +120,11 @@ export const Chart7 = () => {
                 }
             ]
         });
+
+    };
+    useEffect(() => {
+        myChart.current = echarts.init(divRef.current);
+        x(data);
     }, []);
 
     return (
