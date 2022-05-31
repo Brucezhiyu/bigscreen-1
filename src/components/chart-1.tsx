@@ -3,8 +3,35 @@ import * as echarts from 'echarts';
 import {px} from '../shared/px'
 export const Chart1 = () => {
     const divRef = useRef(null);
+    const myChart = useRef(null);
+    const data = [
+        {name: '00:00', 2011: 2, 2012: 3},
+        {name: '02:00', 2011: 2, 2012: 3},
+        {name: '04:00', 2011: 2, 2012: 3},
+        {name: '06:00', 2011: 2, 2012: 3},
+        {name: '08:00', 2011: 20, 2012: 3},
+        {name: '10:00', 2011: 2, 2012: 3},
+        {name: '12:00', 2011: 20, 2012: 3},
+        {name: '14:00', 2011: 2, 2012: 3},
+    ];
     useEffect(() => {
-        console.log(divRef.current);
+
+        setInterval(() => {
+
+            const newData = [
+                {name: '00:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+                {name: '02:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+                {name: '04:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+                {name: '06:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+                {name: '08:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+                {name: '10:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+                {name: '12:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+                {name: '14:00', 2011: Math.random() * 1000, 2012: Math.random() * 1000},
+            ];
+            x(newData);
+        }, 1000);
+    }, []);
+    const x = (data) => {
         const itemStyle = {
             opacity: 0.8,
             shadowBlur: 10,
@@ -12,31 +39,7 @@ export const Chart1 = () => {
             shadowOffsetY: 0,
             shadowColor: 'rgba(0, 0, 0, 0.5)'
         };
-        const dataJR = [
-            [0, 4000],
-            [1, 2000],
-            [6.03, 5000],
-            [2.0, 5000],
-            [3.0, 2330],
-            [4.08, 3220],
-            [5,4000],
-        ];
-        const dataWC = [
-            [0, 1000],
-            [2, 4000],
-            [1, 2000],
-
-            [3, 2000],
-            [5, 5000],
-            [6, 1000],
-
-        ];
-        const schema = [
-            {name: 'date', index: 0, text: '时间'},
-            {name: 'number', index: 1, text: '人数'},
-        ];
-        const myChart = echarts.init(divRef.current);
-        myChart.setOption({
+        myChart.current.setOption({
             color: [
                 '#026CFC', '#1EC919'
             ],
@@ -65,8 +68,8 @@ export const Chart1 = () => {
             },
             yAxis: {
                 type:'value',
-                data: [0, 1000, 2000, 3000, 4000, 5000],
-                max:5000,
+                data: data.map(i => i.name),
+                max:2000,
                 splitLine:{show:false},
                 axisTick: {show: false},
                 axisLine: {show: false},
@@ -95,16 +98,20 @@ export const Chart1 = () => {
                     name: '进入',
                     type: 'scatter',
                     itemStyle: itemStyle,
-                    data: dataJR
+                    data: data.map(i => i[2011])
                 },
                 {
                     name: '外出',
                     type: 'scatter',
                     itemStyle: itemStyle,
-                    data: dataWC
+                    data: data.map(i => i[2012])
                 },
             ]
         });
+    };
+    useEffect(() => {
+        myChart.current = echarts.init(divRef.current);
+        x(data);
     }, []);
     return (
     <div className="bordered 人员进出分析">
