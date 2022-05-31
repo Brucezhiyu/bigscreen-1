@@ -102,7 +102,7 @@ export const Chart7 = () => {
     }, []);
 
     return (
-        <div className="bordered 人员进出分析">
+        <div className="bordered 人员进出分析 after">
             <div ref={divRef} className="chart"/>
         </div>
     );

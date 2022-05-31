@@ -8,13 +8,13 @@
   color: white;
 
   > header {
-    height: px(1.95);
+    height: px(1.7);
     background-size: cover;
     width: px(32.68);
     margin: 0 auto;
   }
   >footer{
-    height: px(1.31);
+    height: px(1.2);
     background-size: cover;
     width: px(32.68);
     margin: 0 auto;
@@ -27,7 +27,7 @@
     grid-template:
       "box1 box1 box4 box6" 4.36fr
       "box2 box2 box4 box7" 4.36fr
-      "box3 box3 box5 box8" 4.36fr / 4.17fr 4.17fr 13.12fr 8.34fr;
+      "box3 box3 box5 box8" 4.36fr / 4.42fr 4.42fr 12.12fr 8.84fr;
     grid-column-gap: px(0.53);
     grid-row-gap: px(0);
 
@@ -63,7 +63,7 @@
         height: px(0.1);
         background: #13124C;
         z-index: 2;
-        left: px(2.6);
+        left: px(2.8);
         top: px(0);
         border-style: solid;
         border-color: #231763 transparent transparent transparent;
@@ -100,10 +100,24 @@
     > .section5 {
       grid-area: box5;
       .after{
-        &::after{left: px(4.8)}
+        &::after{left: px(4.5)}
       }
     }
-
+    > .section6 {
+      .after{
+        &::after{left: px(2.5)}
+      }
+    }
+    > .section7 {
+      .after{
+        &::after{left: px(2.5)}
+      }
+    }
+    > .section8 {
+      .after{
+        &::after{left: px(2.5)}
+      }
+    }
     .人员进出分析 {
       height: px(4.36);
       display: flex;

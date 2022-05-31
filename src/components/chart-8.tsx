@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Chart8 = () => {
     return (
-        <div className="bordered 人员进出分析 日志">
+        <div className="bordered 人员进出分析 日志 after">
             <table>
                 <thead>
                 <tr>
