@@ -20,6 +20,7 @@
     margin: 0 auto;
   }
 
+
   > main {
     flex: 1;
     display: grid;
@@ -87,7 +88,15 @@
     }
 
     > .section4 {
+      padding-top: px(0.6);
       grid-area: box4;
+      .house{
+        height: px(9.33);
+        width: px(13);
+        background-size: cover;
+        &::after {display: none}
+      }
+
     }
 
     > .section5 {
