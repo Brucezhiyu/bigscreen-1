@@ -114,5 +114,32 @@
       flex: 1;
       width: 100%;
     }
+    .日志{
+      > table {
+        margin-top: px(0.26);
+        border-collapse: collapse;
+        .false{
+          color: #b14f4f;
+        }
+        .true{
+          color: #05cfcf;
+        }
+        th,td{
+          font-size: px(0.05);
+          color:lightgray;
+
+        }
+        thead {
+          th {
+            height: px(0);
+
+          }
+        }
+        tbody {
+          td {height: px(0.6); width: px(1);
+          }
+        }
+      }
+    }
   }
 }

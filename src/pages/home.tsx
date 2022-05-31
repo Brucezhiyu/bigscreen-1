@@ -9,6 +9,7 @@ import {Chart3} from '../components/chart-3';
 import {Chart5} from '../components/chart-5';
 import {Chart6} from '../components/chart-6';
 import {Chart7} from '../components/chart-7';
+import {Chart8} from '../components/chart-8';
 
 export const Home = () => {
 
@@ -43,7 +44,10 @@ export const Home = () => {
                     <h2>小区用电</h2>
                     <Chart7/>
                 </section>
-                <section className="bordered section8"></section>
+                <section className=" section8">
+                    <h2>小区日志</h2>
+                    <Chart8/>
+                </section>
             </main>
             <footer style={{backgroundImage: `url(${footerBg})`}}></footer>
         </div>
