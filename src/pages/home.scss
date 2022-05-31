@@ -43,6 +43,7 @@
       background: linear-gradient(180deg, rgba(19, 18, 76, 1) 59%, rgba(20, 20, 84, 1) 100%);
 
       &::before {
+        pointer-events: none;
         content: '';
         position: absolute;
         left: 0;
