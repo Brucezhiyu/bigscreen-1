@@ -25,16 +25,14 @@
     flex: 1;
     display: grid;
     grid-template:
-      "box1 box1 box4 box5" 4.36fr
-      "box2 box2 box4 box5" 4.36fr
-      "box3 box3 box4 box5" 4.36fr / 4.17fr 4.17fr 13.12fr 8.34fr;
+      "box1 box1 box4 box6" 4.36fr
+      "box2 box2 box4 box7" 4.36fr
+      "box3 box3 box5 box8" 4.36fr / 4.17fr 4.17fr 13.12fr 8.34fr;
     grid-column-gap: px(0.53);
     grid-row-gap: px(0);
 
     > section {
       text-align: center;
-
-
     }
 
     .bordered {
@@ -101,6 +99,9 @@
 
     > .section5 {
       grid-area: box5;
+      .after{
+        &::after{left: px(4.8)}
+      }
     }
 
     .人员进出分析 {

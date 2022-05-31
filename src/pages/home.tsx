@@ -6,6 +6,7 @@ import house from '../images/house.png';
 import {Chart1} from '../components/chart-1';
 import {Chart2} from '../components/chart-2';
 import {Chart3} from '../components/chart-3';
+import {Chart5} from '../components/chart-5';
 
 export const Home = () => {
 
@@ -28,7 +29,13 @@ export const Home = () => {
                 <section className=" section4">
                     <div className="bordered house" style={{backgroundImage: `url(${house})`}}></div>
                 </section>
-                <section className="bordered section5"></section>
+                <section className=" section5">
+                    <h2>开门方式</h2>
+                    <Chart5/>
+                </section>
+                <section className="bordered section6"></section>
+                <section className="bordered section7"></section>
+                <section className="bordered section8"></section>
             </main>
                 <footer style={{backgroundImage: `url(${footerBg})`}}></footer>
         </div>
