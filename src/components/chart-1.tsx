@@ -64,7 +64,7 @@ export const Chart1 = () => {
             },
             yAxis: {
                 type:'value',
-                data: ['0', '1000', '2000', '3000', '4000', '5000'],
+                data: [0, 1000, 2000, 3000, 4000, 5000],
                 max:5000,
                 splitLine:{show:false},
                 axisTick: {show: false},
